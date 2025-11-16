@@ -105,7 +105,7 @@ class _SearchBookDialogState extends State<SearchBookDialog> {
               ),
               const SizedBox(height: 16),
               DropdownButtonFormField<String>(
-                value: _estadoLectura,
+                initialValue: _estadoLectura,
                 dropdownColor: Colors.blue.shade800,
                 style: const TextStyle(color: Colors.white),
                 decoration: InputDecoration(
