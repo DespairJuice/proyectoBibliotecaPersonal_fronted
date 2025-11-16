@@ -1,0 +1,2 @@
+- [x] Arreglar estrellas de calificación que se salen del formulario en add_book_dialog.dart, edit_book_dialog.dart y search_book_dialog.dart
+- [x] Arreglar fecha de última actualización que se sale del recuadro en book_detail_page.dart
