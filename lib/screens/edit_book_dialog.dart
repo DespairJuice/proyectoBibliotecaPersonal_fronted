@@ -227,7 +227,7 @@ class _EditBookDialogState extends State<EditBookDialog> {
                 'notasPersonales': _notasController.text.trim(),
                 'estadoLectura': _estadoLectura,
                 'calificacion': _calificacion,
-                'ultimaActualizacion': DateTime.now().toIso8601String(),
+                'ultimaActualizacion': DateTime.now().toUtc().toIso8601String(),
                 // 'imagen': _imagenPath, // Implementar si se requiere
               };
               final confirm = await showDialog<bool>(

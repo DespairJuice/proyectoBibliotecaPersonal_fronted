@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:timezone/timezone.dart' as tz;
 import '../services/api_service.dart';
 import 'edit_book_dialog.dart';
 
@@ -24,9 +25,11 @@ class _BookDetailPageState extends State<BookDetailPage> {
   String formatFecha(String? fechaStr) {
     if (fechaStr == null || fechaStr.isEmpty) return '';
     try {
-      final date = DateTime.parse(fechaStr).toLocal();
+      final dateUtc = DateTime.parse(fechaStr);
+      final bogotaLocation = tz.getLocation('America/Bogota');
+      final dateBogota = tz.TZDateTime.from(dateUtc, bogotaLocation);
       final formatter = DateFormat("EEEE, d 'de' MMMM 'de' y 'a las' HH:mm", 'es_ES');
-      return formatter.format(date);
+      return formatter.format(dateBogota);
     } catch (e) {
       return fechaStr;
     }

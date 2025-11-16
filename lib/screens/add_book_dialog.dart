@@ -214,6 +214,7 @@ class _AddBookDialogState extends State<AddBookDialog> {
                 'notasPersonales': _notasController.text.trim(),
                 'estadoLectura': _estadoLectura,
                 'calificacion': _calificacion,
+                'ultimaActualizacion': DateTime.now().toUtc().toIso8601String(),
                 // 'imagen': _imagenPath, // Implementar si se requiere
               };
               final ok = await widget.onSave(libro);
