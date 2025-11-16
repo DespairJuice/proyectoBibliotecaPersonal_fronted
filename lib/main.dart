@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 import 'screens/splash_screen.dart';
 import 'screens/home_page.dart';
 
 void main() {
+  tz.initializeTimeZones();
+  tz.setLocalLocation(tz.getLocation('America/Bogota')); // Ajusta a tu zona horaria
   initializeDateFormatting('es_ES', null).then((_) => runApp(const MyApp()));
 }
 

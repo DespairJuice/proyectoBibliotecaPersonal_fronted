@@ -24,7 +24,7 @@ class _BookDetailPageState extends State<BookDetailPage> {
   String formatFecha(String? fechaStr) {
     if (fechaStr == null || fechaStr.isEmpty) return '';
     try {
-      final date = DateTime.parse(fechaStr);
+      final date = DateTime.parse(fechaStr).toLocal();
       final formatter = DateFormat("EEEE, d 'de' MMMM 'de' y 'a las' HH:mm", 'es_ES');
       return formatter.format(date);
     } catch (e) {
